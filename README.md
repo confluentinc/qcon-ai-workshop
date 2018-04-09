@@ -20,11 +20,11 @@ If you're reading this, you probably know where to find the repo with the instru
 
 3. Verify that you have connectivity to your Kafka cluster by typing `kafkacat -b kafka1:9092 -L`. This will list all cluster metadata, which at this point isn't much.
 
-4. Produce a single record into the `movies-raw` topic from the `streams-demo/data/movies-json.js` file. Hint: use `tail -n 1` to pipe a single record to `kafkacat`, and check out the `-P` and `-t` command line switches at `kafkacat --help`.
+4. Produce a single record into the `movies-raw` topic from the `streams-demo/data/movies-json.js` file. Hint: use `head -n 1` to pipe a single record to `kafkacat`, and check out the `-P` and `-t` command line switches at `kafkacat --help`.
 
 5. Once you've produced a record to the topic, open up a new terminal tab or window and consume it using `kafkacat` and the `-C` switch.
 
-6. Go back to the producer terminal tab and send two records to the topic using `tail -n 2`. (It's okay that one of these is a duplicate.)
+6. Go back to the producer terminal tab and send two records to the topic using `head -n 2`. (It's okay that one of these is a duplicate.)
 
 7. For fun, keep the consumer tab visible and run this shell script in the producer tab:
 ```bash
